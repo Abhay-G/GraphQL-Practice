@@ -3,7 +3,7 @@
 # GraphQL Practice
 
 A simple GraphQL API that contains courses offered by some institution with various information and serves that information to frontend from the server.
-One can add courses, get course, change information, delete it  etc. I have used latest es6 fe
+One can add courses, get course, change information, delete it  etc.
 
 ### How to run
 

@@ -11,7 +11,7 @@ class Course {
         this.price = price;
         this.language = language;
         this.stack = stack;
-        thisthis.teachingAssists = teachingAssists;
+        this.teachingAssists = teachingAssists;
     }
 }
 
@@ -22,8 +22,14 @@ const resolvers = {
         return new Course(id, courseholder[id]);
     },
     createCourse: ({ input }) => {
-        let id = nonoid();
-        courseholder[id] = input[id];
+        let id = nanoid();
+        courseholder[id] = input;
         return new Course(id, input);
     },
+    createTeachingAssist: ({ input, courseid }) => {
+        let course = courseholder[courseid];
+        course.teachingAssists = [...course.teachingAssists, input];
+        return new Course(courseid, course);
+    },
 };
+export default resolvers;

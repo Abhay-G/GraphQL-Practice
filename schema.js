@@ -29,7 +29,7 @@ const schema = buildSchema(`
    }
 
    input CourseInput{
-        id: ID!
+        id: ID
         courseName: String!
         category: String
         language: String
@@ -45,6 +45,7 @@ const schema = buildSchema(`
     }
     type Mutation{
         createCourse(input:CourseInput): Course
+        createTeachingAssist(input:TeachingAssistInput,courseId: ID): Course
     }
 
 `);
